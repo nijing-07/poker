@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>嘻嘻嘻嘻嘻嘻嘻<3</title>
+    <title>嘻嘻嘻嘻嘻嘻嘻</title>
     <style>
         body {
             text-align: center;
@@ -21,7 +21,7 @@
 </head>
 <body>
 
-    <h1>嘻嘻嘻嘻嘻嘻嘻<3</h1>
+    <h1>嘻嘻嘻嘻嘻嘻嘻</h1>
     <img id="cardImage" src="pokercard.jpeg" alt="撲克牌">
     <br>
     <button onclick="shuffleDeck()">洗牌</button>
@@ -47,13 +47,13 @@
                 [currentDeck[i], currentDeck[j]] = [currentDeck[j], currentDeck[i]];
             }
             document.getElementById('cardImage').src = 'card_back.jpg';
-            alert("已經洗牌！");
+            alert("開始吧我的小寶貝");
         }
 
         // 抽牌
         function drawCard() {
             if (currentDeck.length === 0) {
-                alert("開始吧我的小寶貝");
+                alert("重新洗牌吧");
                 return;
             }
             const card = currentDeck.pop();
