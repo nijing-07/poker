@@ -38,7 +38,7 @@
 <body>
 
     <h1>嘻嘻嘻嘻嘻嘻嘻</h1>
-    <img id="cardImage" src="pokercard.jpeg" alt="撲克牌">
+    <img id="cardImage" src="pokercard.jpeg" alt="會是誰來抽呢？">
     <br>
     <button onclick="shuffleDeck()">洗牌</button>
     <button onclick="drawCard()">抽牌</button>
@@ -69,7 +69,7 @@
         // 抽牌
         function drawCard() {
             if (currentDeck.length === 0) {
-                alert("重新洗牌吧");
+                alert("沒牌了 再來一局");
                 return;
             }
             const card = currentDeck.pop();
