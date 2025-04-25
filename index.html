@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>撲克牌洗牌遊戲</title>
+    <style>
+        body {
+            text-align: center;
+            margin-top: 50px;
+        }
+        img {
+            width: 150px;
+            height: auto;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>撲克牌洗牌遊戲</h1>
+    <img id="cardImage" src="card_back.png" alt="撲克牌">
+    <br>
+    <button onclick="shuffleDeck()">洗牌</button>
+    <button onclick="drawCard()">抽牌</button>
+
+    <script>
+        let deck = [];
+        let currentDeck = [];
+
+        // 初始化牌堆
+        function initializeDeck() {
+            deck = [];
+            for (let i = 1; i <= 32; i++) {
+                deck.push(`card_${i}.png`);
+            }
+        }
+
+        // 洗牌
+        function shuffleDeck() {
+            currentDeck = [...deck];
+            for (let i = currentDeck.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [currentDeck[i], currentDeck[j]] = [currentDeck[j], currentDeck[i]];
+            }
+            document.getElementById('cardImage').src = 'card_back.png';
+            alert("已經洗牌！");
+        }
+
+        // 抽牌
+        function drawCard() {
+            if (currentDeck.length === 0) {
+                alert("牌抽完了，請重新洗牌！");
+                return;
+            }
+            const card = currentDeck.pop();
+            document.getElementById('cardImage').src = card;
+        }
+
+        initializeDeck();
+    </script>
+
+</body>
+</html>
