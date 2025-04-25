@@ -18,6 +18,22 @@
             font-size: 20px;
         }
     </style>
+
+    <!-- 自動加版本，讓 CSS、JS 每次更新 -->
+    <script>
+    window.onload = function () {
+        const tags = document.querySelectorAll('link[rel="stylesheet"], script[src]');
+        const now = Date.now();
+        tags.forEach(tag => {
+            let attr = tag.tagName === 'SCRIPT' ? 'src' : 'href';
+            let url = tag.getAttribute(attr);
+            if (url && !url.includes('?')) {
+                tag.setAttribute(attr, url + '?v=' + now);
+            }
+        });
+    };
+    </script>
+
 </head>
 <body>
 
@@ -46,7 +62,7 @@
                 const j = Math.floor(Math.random() * (i + 1));
                 [currentDeck[i], currentDeck[j]] = [currentDeck[j], currentDeck[i]];
             }
-            document.getElementById('cardImage').src = 'card_back.jpg';
+            document.getElementById('cardImage').src = 'card_back.jpg?v=' + Date.now();
             alert("開始吧我的小寶貝");
         }
 
