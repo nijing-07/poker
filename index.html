@@ -57,7 +57,7 @@
                 return;
             }
             const card = currentDeck.pop();
-            document.getElementById('cardImage').src = card;
+            document.getElementById('cardImage').src = card + '?v=' + Date.now();
         }
 
         initializeDeck();
