@@ -22,7 +22,7 @@
 <body>
 
     <h1>撲克牌洗牌遊戲</h1>
-    <img id="cardImage" src="card_back.png" alt="撲克牌">
+    <img id="cardImage" src="card_back.jng" alt="撲克牌">
     <br>
     <button onclick="shuffleDeck()">洗牌</button>
     <button onclick="drawCard()">抽牌</button>
@@ -35,7 +35,7 @@
         function initializeDeck() {
             deck = [];
             for (let i = 1; i <= 32; i++) {
-                deck.push(`card_${i}.png`);
+                deck.push(`card_${i}.jpg`);
             }
         }
 
@@ -46,7 +46,7 @@
                 const j = Math.floor(Math.random() * (i + 1));
                 [currentDeck[i], currentDeck[j]] = [currentDeck[j], currentDeck[i]];
             }
-            document.getElementById('cardImage').src = 'card_back.png';
+            document.getElementById('cardImage').src = 'card_back.jpg';
             alert("已經洗牌！");
         }
 
